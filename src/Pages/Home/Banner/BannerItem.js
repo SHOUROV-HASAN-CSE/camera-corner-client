@@ -14,10 +14,10 @@ const BannerItem = ({slide}) => {
                     </h1>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/3 w-1/4 left-24 top-1/2">
-                <p className='text-2xl text-white'>Best Camera for affordable price.</p>
+                <p className='text-2xl text-white'>Best Used Camera for affordable price.</p>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/3 w-1/3 left-24 bottom-1/3">
-                <p className='text-lg text-white'>we are providing the best camera and after-sales service.</p>
+                <p className='text-lg text-white'>we are providing the best Used camera and after-sales service.</p>
                 </div>
                 <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-24 md:bottom-1/4 bottom-12">
                     <button className="btn btn-outline btn-warning">contact us</button>
