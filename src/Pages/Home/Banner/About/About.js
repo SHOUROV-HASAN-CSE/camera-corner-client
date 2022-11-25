@@ -12,7 +12,7 @@ const About = () => {
                 <div className='w-1/2 my-3'>
                     <h1 className="my-6 text-5xl font-bold">
                     Buy & Sell Camera Gear </h1>
-                    <p className="py-6 lg:text-2xl text-base ">
+                    <p className="py-6 lg:text-2xl text-base">
                       * Made by Creatives, For Creatives. <br />
                       * Buyer & Seller Protection. <br />
                       * Unlimited Free Listings. <br />

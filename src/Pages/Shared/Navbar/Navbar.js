@@ -19,6 +19,7 @@ const menuItems1 = <>
 <li className='font-semibold'><Link to='/'>Home</Link></li>
 <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
 <li className='font-semibold'><Link to='/categories'>Categories</Link></li>
+<li className='font-semibold'><Link to='/addproduct'>Add Product</Link></li>
 
 
   </>
