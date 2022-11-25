@@ -22,7 +22,7 @@ const AddProduct = () => {
         description: message,
     }
     
-    fetch('https://creative-photography-server-two/services', {
+    fetch('https://localhost5000/camera', {
       method: 'POST',
       headers: {
           'content-type': 'application/json'
