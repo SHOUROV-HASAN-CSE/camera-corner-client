@@ -17,12 +17,14 @@ const Navbar = () => {
 
 const menuItems1 = <>
 <li className='font-semibold'><Link to='/'>Home</Link></li>
+<li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
 
 
   </>
 
 const menuItems2 = <>
 <li className='font-semibold'><Link to='/'>Home</Link></li>
+<li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
 
   </>
 
@@ -63,11 +65,11 @@ const menuItems2 = <>
         {
              user?.uid ?
             <>
-            <span onClick={handleLogOut}><button className="btn btn-outline btn-secondary">Logout</button></span>
+            <span onClick={handleLogOut}><button className="btn  btn-warning">Logout</button></span>
             </>
             :
             <>
-                <Link to='/login'><button className="btn btn-outline btn-secondary">Login</button></Link>
+                <Link to='/login'><button className="btn  btn-warning">Login</button></Link>
             </>
         }
 

@@ -5,8 +5,12 @@ import app from '../../firebase/firebase.config';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+
+//create auth context
 export const AuthContext = createContext();
 const auth = getAuth(app);
+
+
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
