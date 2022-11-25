@@ -13,9 +13,9 @@ const Categories = () => {
   return (
     <div className='my-16'>
     <div className='text-center mb-12'>
-        <p className="text-6xl font-semibold text-orange-600">Used Camera Category</p>
+        <p className="text-6xl font-semibold text-[#003144]">Used Camera Category</p>
     </div>
-    <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+    <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {
             Categories.map(category => <CategoriesCard
                 key={category._id}
