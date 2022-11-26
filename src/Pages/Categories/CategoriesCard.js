@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const CategoriesCard = ({category}) => {
+const CategoriesCard = ({category, SetBooking}) => {
 
   const {_id, img, title, resale_price, original_price, location, used, posted_date, seller_name, verified} = category;
 
@@ -25,26 +24,11 @@ const CategoriesCard = ({category}) => {
                 <div className="card-actions justify-end">
                    
                            {/* The button to open modal */}
-                  <label htmlFor="categories-modal" className="btn">Book Now</label>
+                  <label htmlFor="categories-modal" onClick={()=> SetBooking(category)} className="btn">Book Now</label>
                   <label className="btn">Report to admin</label>
                 </div>
             </div>
         </div>
-
-        {/* Modal Body */}
-<input type="checkbox" id="my-modal" className="modal-toggle" />
-<div className="modal">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">{title}</h3>
-    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-    <div className="modal-action">
-      <label htmlFor="my-modal" className="btn">Booked</label>
-    </div>
-  </div>
-</div>
-
-
-
 
     </div>
   );

@@ -5,6 +5,9 @@ import CategoriesModal from './CategoriesModal';
 const Categories = () => {
 
   const [Categories, setCategories] = useState([]);
+  const [booking, SetBooking] = useState(null);
+
+
   useEffect( () =>{
       fetch('http://localhost:5000/categories')
       .then(res =>res.json())
@@ -21,10 +24,16 @@ const Categories = () => {
             Categories.map(category => <CategoriesCard
                 key={category._id}
                 category={category}
+                SetBooking={SetBooking}
             ></CategoriesCard>)
         }
     </div>
-    <CategoriesModal/>
+    {
+     booking &&   
+    <CategoriesModal
+    booking={booking}
+    ></CategoriesModal>
+    }
 </div>
   );
 };

@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 
-const CategoriesModal = () => {
+const CategoriesModal = ({booking}) => {
+  const {title, resale_price} = booking;
+
 
   const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -10,11 +12,23 @@ const CategoriesModal = () => {
     <>
       {/* Put this part before </body> tag */}
 <input type="checkbox" id="categories-modal" className="modal-toggle" />
-<div className="modal">
+<div className="modal text-center">
   <div className="modal-box relative">
     <label htmlFor="categories-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-    <h3 className="text-lg font-bold">{format(selectedDate, 'PP')}</h3>
-    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+    <h1 className="py-4 font-bold text-3xl">{title}</h1>
+    <p className="font-bold text-xl">Price: ${resale_price}</p>
+
+    <form >
+    <input type="text" value={format(selectedDate, 'PP')} className="input input-bordered input-secondary w-full my-1 text-center" disabled/>
+    <input type="text" placeholder="Type here" className="input input-bordered input-secondary w-full my-1 text-center" />
+    <input type="text" placeholder="Type here" className="input input-bordered input-secondary w-full my-1 text-center" />
+    <input type="text" placeholder="Type here" className="input input-bordered input-secondary w-full my-1 text-center" />
+    <input type="text" placeholder="Type here" className="input input-bordered input-secondary w-full my-1 text-center" />
+    <br />
+    <input className='w-full max-w-sm btn my-4' type="submit" value="submit" />
+    </form>
+  
+
   </div>
 </div>
 
