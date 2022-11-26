@@ -19,12 +19,14 @@ const SignUp = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+        const userStatus = form.user.value;
+
         
         createUser(email, password)
         .then(result => {
             const user = result.user;
             form.reset();
-            handleUpdateUserProfile(name, photoURL);
+            handleUpdateUserProfile(name, photoURL, userStatus);
             console.log(user);
             toast('SignUp Successfully.....',{position:"top-center"});
         })
@@ -33,10 +35,11 @@ const SignUp = () => {
         })
     
 
-    const handleUpdateUserProfile = (name, photoURL) => {
+    const handleUpdateUserProfile = (name, photoURL, userStatus) => {
         const profile = {
             displayName: name,
-            photoURL: photoURL
+            photoURL: photoURL,
+            userStatus: userStatus,
         }
     
         updateUserProfile(profile)
@@ -45,8 +48,6 @@ const SignUp = () => {
     }
 
 }
-
-
 
 
     return (
@@ -87,19 +88,10 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text ">Select one</span>
                             </label>
-                            <div className="form-control">
-                        <label className="label cursor-pointer">
-                          <span className="label-text text-lg">Seller</span> 
-                          <input type="radio" name="radio-5" className="radio checked:bg-blue-500" checked />
-                        </label>
-                      </div>
-                            <div className="form-control">
-                        <label className="label cursor-pointer">
-                          <span className="label-text text-lg">User</span> 
-                          <input type="radio" name="radio-5" className="radio checked:bg-red-500" checked />
-                        </label>
-                      </div>
-                      
+                            <select name='user' className="select select-secondary w-full">
+                                <option>Buyer</option>
+                                <option>Seller</option>
+                                </select>
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-warning" type="submit" value="Sign Up" />

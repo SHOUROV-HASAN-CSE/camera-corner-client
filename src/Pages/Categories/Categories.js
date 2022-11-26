@@ -32,6 +32,7 @@ const Categories = () => {
      booking &&   
     <CategoriesModal
     booking={booking}
+    SetBooking={SetBooking}
     ></CategoriesModal>
     }
 </div>
