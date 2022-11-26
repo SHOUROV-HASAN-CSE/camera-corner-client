@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const CategoriesModal = ({booking, SetBooking}) => {
   const {title, resale_price} = booking;
   const [selectedDate, setSelectedDate] = useState(new Date());
   const date = format(selectedDate, 'PP');
+  const {user} = useContext(AuthContext)
 
 
 
@@ -31,9 +33,30 @@ const CategoriesModal = ({booking, SetBooking}) => {
 
     }
 
-    toast('The item is Booked....',{position:"top-center"});
-    console.log(booking);
-    SetBooking(null);
+    
+    
+    fetch('http://localhost:5000/bookings', {
+      method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+      })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+          if (data.acknowledged) {
+            toast('The item is Booked....',{position:"top-center"});
+            SetBooking(null);
+             
+          }
+          else{
+            toast(data.message,{position:"top-center"});
+          }
+              
+              
+    })
+    
   }
 
   return (
@@ -47,11 +70,11 @@ const CategoriesModal = ({booking, SetBooking}) => {
     <p className="font-bold text-lg">Price: ${resale_price}</p>
 
     <form onSubmit={handleBooking}>
-    <input type="text" value={date} className="input input-bordered input-secondary w-full my-1 text-center" disabled/>
-    <input name='name' type="name" placeholder="Your Name" className="input input-bordered input-secondary w-full my-1 text-center" />
-    <input name='email' type="email" placeholder="Email Address" className="input input-bordered input-secondary w-full my-1 text-center" />
+    <input type="text" value={date} className="input  w-full my-1 text-center" disabled/>
+    <input name='name' type="name" defaultValue={user?.displayName} disabled className="input w-full my-1 text-center" />
+    <input name='email' type="email" defaultValue={user?.email} disabled className="input w-full my-1 text-center" />
     <input name='phone' type="number" placeholder="Phone Number" className="input input-bordered input-secondary w-full my-1 text-center" required/>
-    <input name='location' type="text" placeholder="Location" className="input input-bordered input-secondary w-full my-1 text-center"required />
+    <input name='location' type="text" placeholder="Location" className="input input-bordered input-primary w-full my-1 text-center"required />
     <br />
     <input className='w-full btn my-4' type="submit" value="submit" />
     </form>

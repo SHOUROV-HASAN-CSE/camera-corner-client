@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useState } from 'react';
 import CategoriesCard from './CategoriesCard';
 import CategoriesModal from './CategoriesModal';
 
 const Categories = () => {
 
-  const [Categories, setCategories] = useState([]);
   const [booking, SetBooking] = useState(null);
 
-
-  useEffect( () =>{
-      fetch('http://localhost:5000/categories')
+  const {data:categories=[]} = useQuery({
+      queryKey: ['categories'],
+      queryFn: () => fetch('http://localhost:5000/categories')
       .then(res =>res.json())
-      .then(data => setCategories(data))
-  }, [])
+  });
+
+
 
   return (
     <div className='my-16'>
@@ -21,7 +22,7 @@ const Categories = () => {
     </div>
     <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {
-            Categories.map(category => <CategoriesCard
+            categories.map(category => <CategoriesCard
                 key={category._id}
                 category={category}
                 SetBooking={SetBooking}
