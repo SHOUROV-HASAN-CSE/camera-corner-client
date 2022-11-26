@@ -11,9 +11,9 @@ const Category = () => {
     
       <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center mx-auto w-2/4'>
      
-      <Link to='/categories/canon'><img src={canon} alt="" /></Link>
-      <Link to='/categories'><img src={nikon} alt="" /></Link>
-      <Link to='/categories'><img className=' mt-12' src={sony} alt="" /></Link>
+      <Link to='/categories?name=canon'><img src={canon} alt="" /></Link>
+      <Link to='/categories?name=Nikon'><img src={nikon} alt="" /></Link>
+      <Link to='/categories?name=sony'><img className=' mt-12' src={sony} alt="" /></Link>
 
       </div>
       

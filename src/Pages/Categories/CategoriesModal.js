@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const CategoriesModal = ({booking, SetBooking}) => {
@@ -46,19 +45,17 @@ const CategoriesModal = ({booking, SetBooking}) => {
       .then(data => {
           console.log(data);
           if (data.acknowledged) {
-            toast('The item is Booked....',{position:"top-center"});
-            SetBooking(null);
-             
+            toast.success('The item is Booked....');
+            SetBooking(null); 
           }
           else{
-            toast(data.message,{position:"top-center"});
-          }
-              
-              
+            toast.error(data.message);
+          }     
     })
     
   }
 
+  
   return (
     <>
       {/* Put this part before </body> tag */}
@@ -93,9 +90,6 @@ const CategoriesModal = ({booking, SetBooking}) => {
         onSelect={setSelectedDate}
           />
     </div>
-
-
-    <ToastContainer/>
     </>
 
 
