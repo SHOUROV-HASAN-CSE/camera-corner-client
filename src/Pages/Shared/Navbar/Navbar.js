@@ -20,6 +20,7 @@ const menuItems1 = <>
 <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
 <li className='font-semibold'><Link to='/categories'>Categories</Link></li>
 <li className='font-semibold'><Link to='/addproduct'>Add Product</Link></li>
+<li className='font-semibold'><Link to='/dashboard'>Dashboard</Link></li>
 
 
   </>
@@ -76,6 +77,9 @@ const menuItems2 = <>
         }
 
     </div>
+    <label htmlFor="dashboard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </label>
 </div>
   );
 };

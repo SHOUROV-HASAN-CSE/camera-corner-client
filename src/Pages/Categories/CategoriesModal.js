@@ -71,7 +71,7 @@ const CategoriesModal = ({booking, SetBooking}) => {
     <input name='name' type="name" defaultValue={user?.displayName} disabled className="input w-full my-1 text-center" />
     <input name='email' type="email" defaultValue={user?.email} disabled className="input w-full my-1 text-center" />
     <input name='phone' type="number" placeholder="Phone Number" className="input input-bordered input-secondary w-full my-1 text-center" required/>
-    <input name='location' type="text" placeholder="Location" className="input input-bordered input-primary w-full my-1 text-center"required />
+    <input name='location' type="text" placeholder="Your Location" className="input input-bordered input-primary w-full my-1 text-center"required />
     <br />
     <input className='w-full btn my-4' type="submit" value="submit" />
     </form>
