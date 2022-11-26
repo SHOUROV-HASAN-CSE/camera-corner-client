@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CategoriesCard from './CategoriesCard';
+import CategoriesModal from './CategoriesModal';
 
 const Categories = () => {
 
@@ -23,6 +24,7 @@ const Categories = () => {
             ></CategoriesCard>)
         }
     </div>
+    <CategoriesModal/>
 </div>
   );
 };

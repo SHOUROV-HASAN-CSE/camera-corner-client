@@ -25,8 +25,7 @@ const CategoriesCard = ({category}) => {
                 <div className="card-actions justify-end">
                    
                            {/* The button to open modal */}
-                  
-                  <label htmlFor="my-modal" className="btn">Book Now</label>
+                  <label htmlFor="categories-modal" className="btn">Book Now</label>
                   <label className="btn">Report to admin</label>
                 </div>
             </div>

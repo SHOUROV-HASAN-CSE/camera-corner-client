@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { DayPicker } from 'react-day-picker';
+import { format } from 'date-fns';
 
 const AddProduct = () => {
+
+    const [selectedDate, setSelectedDate] = useState(new Date());
+
 
   const handleAddService = event =>{
     event.preventDefault();
@@ -64,12 +69,22 @@ const AddProduct = () => {
                     <input name="rating" type="text" placeholder="Seller Name" className="input input-ghost w-full  input-bordered input-error" required/>
                 </div>
 
-                    <input name="price" type="text" placeholder="Post date (01-10-2022)" className="input input-ghost w-full  input-bordered input-primary" required/>
+                 <div className='text-center'>
+                 <input name="price" type="text" placeholder={format(selectedDate, 'PP')} className="input input-ghost w-1/2 text-center input-bordered input-primary " readOnly/>
+                 </div>
 
                 <div className='text-center mt-3'>
                 <input className='btn btn-outline btn-secondary' type="submit" value="Add Product" />
                 </div>
             </form>
+
+            <div className='hidden'>
+            <DayPicker
+                mode='single'
+                selected={selectedDate}
+                onSelect={setSelectedDate}
+                />
+             </div>
             <ToastContainer/>
     </div>
   );
