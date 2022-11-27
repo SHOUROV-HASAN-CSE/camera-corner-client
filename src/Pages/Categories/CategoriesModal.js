@@ -8,7 +8,7 @@ const CategoriesModal = ({booking, SetBooking}) => {
   const {img, title, resale_price} = booking;
   const [selectedDate, setSelectedDate] = useState(new Date());
   const date = format(selectedDate, 'PP');
-  const {user} = useContext(AuthContext)
+  const {user} = useContext(AuthContext);
 
 
 

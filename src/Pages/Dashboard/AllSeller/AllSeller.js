@@ -1,12 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const AllSeller = () => {
 
-
-
   
-  const { data: allSellers = [] } = useQuery
+  const { data: allSellers = [], refetch } = useQuery
   ({
       queryKey: ['users'],
       queryFn: async () => {
@@ -17,6 +16,23 @@ const AllSeller = () => {
   })
 
 
+  
+  const handleDelete = email =>{
+    const proceed = window.confirm(' Would you want to Delete this Seller?');
+    if(proceed){
+        fetch(`http://localhost:5000/users/${email}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.deletedCount > 0){
+              toast.success('Deleted successfully.........');
+              refetch();
+               
+            }
+        })
+    }
+}
 
 
   return (
@@ -29,9 +45,9 @@ const AllSeller = () => {
       <tr>
         <th>ID</th>
         <th>Image</th>
-        <th>product Name</th>
-        <th>Product Price</th>
-        <th>Purchase</th>
+        <th>Seller Name</th>
+        <th>Seller Email</th>
+        <th>Delete Seller</th>
         
       </tr>
     </thead>
@@ -40,10 +56,10 @@ const AllSeller = () => {
     {
          allSellers.map((seller, i) => <tr key={seller._id}>
           <th>{i+1}</th>
-          <td><img className='w-28' src={seller.img} alt="" /></td>
-          <td>{seller.productName}</td>
-          <td>${seller.price}</td>
-          <td><button className="btn">Delete Seller</button></td>
+          <td><img className='w-24 rounded-2xl' src={seller.photoURL} alt="" /></td>
+          <td>{seller.name}</td>
+          <td>{seller.email}</td>
+          <td><button onClick={() => handleDelete(seller.email)} className="btn">Delete</button></td>
     
           </tr>)
     }
