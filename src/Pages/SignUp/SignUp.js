@@ -43,12 +43,29 @@ const SignUp = () => {
         }
     
         updateUserProfile(profile)
-            .then(() => { })
+            .then(() => {
+                saveUser(name, email, userStatus);
+             })
             .catch(error => console.error(error));
     }
 
 }
 
+
+const saveUser = (name, email, userStatus) =>{
+    const user ={name, email, userStatus};
+    fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(data =>{
+        console.log('saveUser', data);
+    })
+}
 
     return (
         <div className="hero w-full my-10">

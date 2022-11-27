@@ -14,6 +14,7 @@ import Login from "../../Pages/Login/Login";
 import AddProduct from "../../Pages/SellerPanel/AddProduct/AddProduct";
 import MyProduct from "../../Pages/SellerPanel/MyProduct/MyProduct";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 
@@ -41,25 +42,25 @@ const router = createBrowserRouter([
       },
       {
         path:'/categories',
-        element:<Categories/>
+        element: <PrivateRoute><Categories/></PrivateRoute>
       },
       {
         path:'/addproduct',
-        element:<AddProduct/>
+        element:<PrivateRoute><AddProduct/></PrivateRoute>
       },
       {
         path:'/myorders',
-        element:<MyOrders/>
+        element:<PrivateRoute><MyOrders/></PrivateRoute>
       },
       {
         path:'/<myproduct/>',
-        element:<MyProduct/>
+        element:<PrivateRoute><MyProduct/></PrivateRoute>
       },
     ]
   },
   {
     path:'/dashboard',
-    element: <DashboardLayout/>,
+    element: <PrivateRoute><DashboardLayout/></PrivateRoute>,
     children: [
       {
         path:'/dashboard',

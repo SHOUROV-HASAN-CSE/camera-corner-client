@@ -39,7 +39,7 @@ const Login = () => {
         })
             .then(res => res.json())
             .then(data => {
-                localStorage.setItem('Creative-photography-token', data.token);
+                localStorage.setItem('camera-corner-token', data.token);
                 navigate(from, { replace: true });
             });
         toast('Login with Google Successfully.....',{position:"top-center"});
@@ -74,7 +74,7 @@ const Login = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    localStorage.setItem('Creative-photography-token', data.token);
+                    localStorage.setItem('camera-corner-token', data.token);
                     navigate(from, { replace: true });
                 });
 
