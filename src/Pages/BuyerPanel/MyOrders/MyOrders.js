@@ -24,17 +24,17 @@ const MyOrders = () => {
 
   return (
     <div>
-    <h1 className='text-3xl mb-5 font-semibold text-center'>My Orders</h1>
+    <h1 className='text-5xl mb-5 font-bold text-center text-[#003144]'>My Orders</h1>
 
     <div className="overflow-x-auto">
-  <table className="table w-full">
+  <table className="table w-full mb-10 shadow-xl">
     <thead>
       <tr>
-        <th>bookingDate</th>
-        <th>productName</th>
-        <th>price</th>
-        <th>phone</th>
-        <th>location</th>
+        <th>ID</th>
+        <th>Image</th>
+        <th>product Name</th>
+        <th>Product Price</th>
+        <th>Purchase</th>
         
       </tr>
     </thead>
@@ -43,11 +43,11 @@ const MyOrders = () => {
     {
          bookings.map((booking, i) => <tr key={booking._id}>
           <th>{i+1}</th>
-          <td>{booking.bookingDate}</td>
+          <td><img className='w-28' src={booking.img} alt="" /></td>
           <td>{booking.productName}</td>
-          <td>{booking.price}</td>
-          <td>{booking.phone}</td>
-          <td>{booking.location}</td>
+          <td>${booking.price}</td>
+          <td><button className="btn">Pay Now</button></td>
+    
           </tr>)
     }
       
