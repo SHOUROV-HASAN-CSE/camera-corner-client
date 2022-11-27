@@ -1,22 +1,25 @@
-import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CategoriesCard from './CategoriesCard';
 import CategoriesModal from './CategoriesModal';
+import { useSearchParams  } from 'react-router-dom'
 
 const Categories = () => {
 
+  let [searchParams, setSearchParams] = useSearchParams();
   const [booking, SetBooking] = useState(null);
+  const [categories, setCategories] = useState([]);
 
-  const {data:categories=[]} = useQuery({
-      queryKey: ['categories'],
-      queryFn: () => fetch('http://localhost:5000/categories')
-      .then(res =>res.json())
-  });
 
+  
+  useEffect(() => {
+      fetch(`http://localhost:5000/categories?name=${searchParams.get('name')}`)
+          .then(res => res.json())
+          .then(data => setCategories(data))
+  },[]);
 
 
   return (
-    <div className='my-16'>
+    <div className='my-16'>       
     <div className='text-center mb-12'>
         <p className="text-6xl font-semibold text-[#003144]">Used Camera Category</p>
     </div>

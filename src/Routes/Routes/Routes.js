@@ -67,15 +67,15 @@ const router = createBrowserRouter([
         element: <Dashboard/>
       },
       {
-        path:'/allbuyer',
+        path:'/dashboard/allbuyer',
         element: <AllBuyer/>
       },
       {
-        path:'/allseller',
+        path:'/dashboard/allseller',
         element: <AllSeller/>
       },
       {
-        path:'/reporteditem',
+        path:'/dashboard/reporteditem',
         element: <ReportedItem/>
       },
     ] 
