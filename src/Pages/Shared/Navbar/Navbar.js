@@ -18,6 +18,7 @@ const Navbar = () => {
 const menuItems1 = <>
 
 <li className='font-semibold'><Link to='/addproduct'>Add Product</Link></li>
+<li className='font-semibold'><Link to='/myproduct'>My Product</Link></li>
 <li className='font-semibold'><Link to='/dashboard'>Dashboard</Link></li>
 
 

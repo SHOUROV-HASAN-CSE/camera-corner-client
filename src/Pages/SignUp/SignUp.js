@@ -1,15 +1,15 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 import image from '../../assets/images/signup/signup.jpg';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const SignUp = () => {
 
-
+    const navigate = useNavigate();
     const {createUser, updateUserProfile} = useContext(AuthContext);
 
     const handleSignUp = event =>{
@@ -28,10 +28,11 @@ const SignUp = () => {
             form.reset();
             handleUpdateUserProfile(name, photoURL, userStatus);
             console.log(user);
-            toast('SignUp Successfully.....',{position:"top-center"});
+            toast.success('SignUp Successfully.....');
+            navigate('/');
         })
         .catch(error => {console.error(error)
-          toast(error.message,{position:"top-center"});
+          toast.error(error.message);
         })
     
 
@@ -117,7 +118,6 @@ const saveUser = (name, email, userStatus, photoURL) =>{
                     <p className='text-center'>Already have an account? <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
                 </div>
             </div>
-            <ToastContainer/>
         </div>
     );
 };

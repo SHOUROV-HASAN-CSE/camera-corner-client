@@ -3,10 +3,12 @@ import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
 
     const [selectedDate, setSelectedDate] = useState(new Date());
+    const navigate = useNavigate();
 
     const {user} = useContext(AuthContext);
     const date = format(selectedDate, 'PP');
@@ -55,6 +57,7 @@ const AddProduct = () => {
           if (data.acknowledged) {
             toast.success('Your Product is added for ready to Sell....');
             form.reset();
+            navigate('/myproduct');
           }
           else{
             toast.error(data.message);
