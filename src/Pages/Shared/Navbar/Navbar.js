@@ -76,7 +76,7 @@ const menuItems2 = <>
         <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
 
         <div className="dropdown dropdown-hover">
-        <li className='font-semibold'> <Link> Categories</Link></li>
+        <li className='font-semibold'> <Link to=''> Categories</Link></li>
         <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-36">
             <li><Link to='/categories?name=canon'>Canon</Link></li>
             <li><Link to='/categories?name=Nikon'>Nikon</Link></li>

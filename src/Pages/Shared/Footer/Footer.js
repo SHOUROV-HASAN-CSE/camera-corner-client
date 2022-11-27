@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/icon/icon.png';
 
 const Footer = () => {
@@ -12,10 +13,10 @@ const Footer = () => {
       </div>
     </div> 
     <div>
-      <span className="footer-title">Camera Category</span> 
-      <button className="link link-hover">Sony</button> 
-      <button className="link link-hover">Canon</button> 
-      <button className="link link-hover">Nikon</button> 
+      <span className="footer-title">Camera Category</span>   
+      <Link to='/categories?name=canon'><button className="link link-hover">Canon</button> </Link>
+      <Link to='/categories?name=Nikon'><button className="link link-hover">Nikon</button></Link>
+      <Link to='/categories?name=sony'><button className="link link-hover">Sony</button> </Link>
     </div> 
     <div>
       <span className="footer-title">Legal</span> 

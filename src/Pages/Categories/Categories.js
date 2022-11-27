@@ -10,12 +10,11 @@ const Categories = () => {
   const [categories, setCategories] = useState([]);
 
 
-  
   useEffect(() => {
       fetch(`http://localhost:5000/categories?name=${searchParams.get('name')}`)
           .then(res => res.json())
           .then(data => setCategories(data))
-  },[]);
+  },[searchParams]);
 
 
   return (
