@@ -16,7 +16,8 @@ const AdvertisedItems = () => {
 
 
   return (
-    <div className='my-16'>       
+    <div className='my-16'>
+        {!adds?.length? <></> : <>      
     <div className='text-center mb-12'>
         <p className="text-6xl font-semibold text-[#003144]">Flash Sale</p>
     </div>
@@ -28,6 +29,7 @@ const AdvertisedItems = () => {
             ></AdvertisedCard>)
         }
     </div>
+    </>} 
 </div>
   );
 };

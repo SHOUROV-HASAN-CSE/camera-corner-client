@@ -36,8 +36,8 @@ const MyProduct = () => {
     }
 }
 
-const handleMakeAdmin = email => {
-  fetch(`http://localhost:5000/product/${email}`, {
+const handleMakeAdmin = id => {
+  fetch(`http://localhost:5000/product/${id}`, {
       method: 'PUT', 
       headers: {
           authorization: `bearer ${localStorage.getItem('camera-corner-token')}`
@@ -81,7 +81,7 @@ const handleMakeAdmin = email => {
           <td>{product.title}</td>
           <td>$ {product.resale_price}</td>
           <td className='font-semibold'>{product.sales_status}</td>
-          <td>{ product?.advertise !== 'added' && <button onClick={() => handleMakeAdmin(product.email)} className="btn">advertise</button>}</td>
+          <td>{ product?.advertise !== 'added' && <button onClick={() => handleMakeAdmin(product._id)} className="btn">advertise</button>}</td>
           <td><button onClick={() => handleDelete(product.email)} className="btn">Delete</button></td>
           </tr>)
     }
