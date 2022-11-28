@@ -6,7 +6,7 @@ import useAdmin from '../../../hooks/useAdmin';
 
 const Navbar = () => {
 
-  const [client, setClient] = useState([]);
+  const [client, setClient] = useState({});
   console.log(client);
 
   const {user, logOut} = useContext(AuthContext);
@@ -37,19 +37,7 @@ useEffect(() => {
           
             setClient( data);
         })
-},[user]);
-
-   
-        
-   
-
-
-
-
-
-
-
-
+},[user?.email, client?.userStatus]);
 
 
 
@@ -77,16 +65,16 @@ useEffect(() => {
         </li>
 
            {
-                client.userStatus==='Seller'?
+                client.userStatus==='Seller' && user?.uid ?
                 <>{menuItems1}</>
                 :
-                 <></>
+                null
             }
              {
-                client.userStatus==='Buyer'?
+                client.userStatus==='Buyer' && user?.uid ?
                 <>{menuItems2}</>
                 :
-                 <></>
+                null
             }
 
         {
@@ -119,17 +107,17 @@ useEffect(() => {
 
 
             {
-                client.userStatus==='Seller'?
+                client.userStatus==='Seller' && user?.uid ?
                 <>{menuItems1}</>
                 :
-                 <></>
+                null
             }
 
              {
-                client.userStatus==='Buyer'?
+                client.userStatus==='Buyer' && user?.uid ?
                 <>{menuItems2}</>
                 :
-                 <></>
+                 null
             }
             
             {
