@@ -8,7 +8,7 @@ const AdvertisedItems = () => {
 
 
   useEffect(() => {
-      fetch(`http://localhost:5000/advertise?name=added`)
+      fetch(`https://camera-corner-server.vercel.app/advertise?name=added`)
           .then(res => res.json())
           .then(data => setAdds(data))
   },[]);

@@ -10,7 +10,7 @@ const AllBuyer = () => {
   ({
       queryKey: ['users'],
       queryFn: async () => {
-          const res = await fetch(`http://localhost:5000/users?user=Buyer`);
+          const res = await fetch(`https://camera-corner-server.vercel.app/users?user=Buyer`);
           const data = await res.json();
           return data;
       }
@@ -20,7 +20,7 @@ const AllBuyer = () => {
   const handleDelete = email =>{
     const proceed = window.confirm(' Would you want to Delete this Seller?');
     if(proceed){
-        fetch(`http://localhost:5000/users/${email}`, {
+        fetch(`https://camera-corner-server.vercel.app/users/${email}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

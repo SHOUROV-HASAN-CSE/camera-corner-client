@@ -11,7 +11,7 @@ const Categories = () => {
 
 
   useEffect(() => {
-      fetch(`http://localhost:5000/categories?name=${searchParams.get('name')}`)
+      fetch(`https://camera-corner-server.vercel.app/categories?name=${searchParams.get('name')}`)
           .then(res => res.json())
           .then(data => setCategories(data))
   },[searchParams]);

@@ -55,7 +55,7 @@ const SignUp = () => {
 
 const saveUser = (name, email, userStatus, photoURL) =>{
     const user ={name, email, userStatus, photoURL};
-    fetch('http://localhost:5000/users', {
+    fetch('https://camera-corner-server.vercel.app/users', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

@@ -11,7 +11,7 @@ const MyProduct = () => {
   ({
       queryKey: ['users'],
       queryFn: async () => {
-          const res = await fetch(`http://localhost:5000/myproduct?email=${user?.email}`);
+          const res = await fetch(`https://camera-corner-server.vercel.app/myproduct?email=${user?.email}`);
           const data = await res.json();
           return data;
       }
@@ -22,7 +22,7 @@ const MyProduct = () => {
   const handleDelete = email =>{
     const proceed = window.confirm(' Would you want to Delete this Product?');
     if(proceed){
-        fetch(`http://localhost:5000/myproduct/${email}`, {
+        fetch(`https://camera-corner-server.vercel.app/myproduct/${email}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
@@ -37,7 +37,7 @@ const MyProduct = () => {
 }
 
 const handleMakeAdmin = id => {
-  fetch(`http://localhost:5000/product/${id}`, {
+  fetch(`https://camera-corner-server.vercel.app/product/${id}`, {
       method: 'PUT', 
       headers: {
           authorization: `bearer ${localStorage.getItem('camera-corner-token')}`

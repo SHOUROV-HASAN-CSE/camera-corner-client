@@ -31,7 +31,7 @@ const menuItems2 = <>
 
 
 useEffect(() => {
-  fetch(`http://localhost:5000/users/${user?.email}`)
+  fetch(`https://camera-corner-server.vercel.app/users/${user?.email}`)
         .then(res => res.json())
         .then(data => {
           

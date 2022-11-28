@@ -35,7 +35,7 @@ const CategoriesModal = ({booking, SetBooking}) => {
 
     
     
-    fetch('http://localhost:5000/bookings', {
+    fetch('https://camera-corner-server.vercel.app/bookings', {
       method: 'POST',
             headers: {
                 'content-type': 'application/json'
