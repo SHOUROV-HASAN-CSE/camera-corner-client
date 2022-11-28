@@ -36,6 +36,23 @@ const MyProduct = () => {
     }
 }
 
+const handleMakeAdmin = email => {
+  fetch(`http://localhost:5000/product/${email}`, {
+      method: 'PUT', 
+      headers: {
+          authorization: `bearer ${localStorage.getItem('camera-corner-token')}`
+      }
+  })
+  .then(res => res.json())
+  .then(data => {
+      if(data.modifiedCount > 0){
+          toast.success('Product Advertise successful.')
+          refetch();
+      }
+  })
+
+
+}
 
   return (
     <div>
@@ -64,9 +81,8 @@ const MyProduct = () => {
           <td>{product.title}</td>
           <td>$ {product.resale_price}</td>
           <td className='font-semibold'>{product.sales_status}</td>
-          <td><button className="btn">advertise</button></td>
+          <td>{ product?.advertise !== 'added' && <button onClick={() => handleMakeAdmin(product.email)} className="btn">advertise</button>}</td>
           <td><button onClick={() => handleDelete(product.email)} className="btn">Delete</button></td>
-    
           </tr>)
     }
       

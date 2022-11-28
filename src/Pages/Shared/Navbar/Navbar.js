@@ -20,18 +20,12 @@ const Navbar = () => {
     }
 
 const menuItems1 = <>
-
 <li className='font-semibold'><Link to='/addproduct'>Add Product</Link></li>
 <li className='font-semibold'><Link to='/myproduct'>My Product</Link></li>
-
-
-
-
   </>
 
 const menuItems2 = <>
 <li className='font-semibold'><Link to='/myorders'>My Orders</Link></li>
-
   </>
 
 
@@ -43,7 +37,7 @@ useEffect(() => {
           
             setClient( data);
         })
-},[user?.email]);
+},[user]);
 
    
         
@@ -82,14 +76,18 @@ useEffect(() => {
           </ul>
         </li>
 
-
-
-                {
-                    user?.uid ?
-                    <>{menuItems1}</>
-                    :
-                    <>{menuItems2}</>
-                }
+           {
+                client.userStatus==='Seller'?
+                <>{menuItems1}</>
+                :
+                 <></>
+            }
+             {
+                client.userStatus==='Buyer'?
+                <>{menuItems2}</>
+                :
+                 <></>
+            }
 
         {
        isAdmin && <>   
@@ -121,11 +119,19 @@ useEffect(() => {
 
 
             {
-                client.userStatus?
+                client.userStatus==='Seller'?
                 <>{menuItems1}</>
                 :
-                 <>{menuItems2}</>
+                 <></>
             }
+
+             {
+                client.userStatus==='Buyer'?
+                <>{menuItems2}</>
+                :
+                 <></>
+            }
+            
             {
         isAdmin && <><li className='font-semibold'><Link to='/dashboard'>Dashboard</Link></li></>
             }
