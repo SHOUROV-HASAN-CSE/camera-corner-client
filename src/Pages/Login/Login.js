@@ -25,8 +25,27 @@ const Login = () => {
         const user = result.user;
 
         const currentUser = {
-            email: user.email
+            name: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+            userStatus: 'Buyer'
+
         }
+        
+        fetch('https://camera-corner-server.vercel.app/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(currentUser)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log('saveUser', data);
+        })
+
+
+        console.log(user);
 
 
         // get jwt token
@@ -46,6 +65,21 @@ const Login = () => {
       })
       .catch(error =>console.error(error)) 
     }
+
+
+
+
+    const saveUser = (name, email, userStatus, photoURL) =>{
+        const user ={name, email, userStatus, photoURL};
+       
+    }
+
+
+
+
+
+
+
 
 
     const handleLogin = event =>{
