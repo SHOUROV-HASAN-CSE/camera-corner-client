@@ -39,7 +39,8 @@ const AddProduct = () => {
         posted_date: date,
         seller_name: sellerName,
         email: user?.email,
-        verified: "true"
+        verified: "true",
+        sales_status: "available"
     }
   
   

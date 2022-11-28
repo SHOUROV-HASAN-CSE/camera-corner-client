@@ -47,6 +47,7 @@ const AllSeller = () => {
         <th>Image</th>
         <th>Seller Name</th>
         <th>Seller Email</th>
+        <th>Verification</th>
         <th>Delete Seller</th>
         
       </tr>
@@ -59,6 +60,7 @@ const AllSeller = () => {
           <td><img className='w-24 rounded-2xl' src={seller.photoURL} alt="" /></td>
           <td>{seller.name}</td>
           <td>{seller.email}</td>
+          <td><button className="btn">Verify</button></td>
           <td><button onClick={() => handleDelete(seller.email)} className="btn">Delete</button></td>
     
           </tr>)

@@ -13,7 +13,7 @@ const MyOrders = () => {
       queryFn: async () => {
           const res = await fetch(url, {
               headers: {
-                 authorization: `bearer ${localStorage.getItem('accessToken')}` 
+                 authorization: `bearer ${localStorage.getItem('camera-corner-token')}` 
               }
           });
           const data = await res.json();

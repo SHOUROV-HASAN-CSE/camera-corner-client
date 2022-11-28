@@ -1,12 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/icon/icon.png';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import useAdmin from '../../../hooks/useAdmin';
 
 const Navbar = () => {
 
+  const [client, setClient] = useState([]);
+  console.log(client);
 
   const {user, logOut} = useContext(AuthContext);
+  const [isAdmin] = useAdmin(user?.email)
 
 
   const handleLogOut = () =>{
@@ -19,16 +23,40 @@ const menuItems1 = <>
 
 <li className='font-semibold'><Link to='/addproduct'>Add Product</Link></li>
 <li className='font-semibold'><Link to='/myproduct'>My Product</Link></li>
-<li className='font-semibold'><Link to='/dashboard'>Dashboard</Link></li>
+
+
 
 
   </>
 
 const menuItems2 = <>
-<li className='font-semibold'><Link to='/'>Home</Link></li>
-<li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
+<li className='font-semibold'><Link to='/myorders'>My Orders</Link></li>
 
   </>
+
+
+
+useEffect(() => {
+  fetch(`http://localhost:5000/users/${user?.email}`)
+        .then(res => res.json())
+        .then(data => {
+          
+            setClient( data);
+        })
+},[user?.email]);
+
+   
+        
+   
+
+
+
+
+
+
+
+
+
 
 
   return (
@@ -62,6 +90,12 @@ const menuItems2 = <>
                     :
                     <>{menuItems2}</>
                 }
+
+        {
+       isAdmin && <>   
+      <li className='font-semibold'><Link to='/dashboard'>Dashboard</Link></li>
+       </>
+       }
                 
             </ul>
         </div>
@@ -87,10 +121,13 @@ const menuItems2 = <>
 
 
             {
-                user?.uid ?
+                client.userStatus?
                 <>{menuItems1}</>
                 :
                  <>{menuItems2}</>
+            }
+            {
+        isAdmin && <><li className='font-semibold'><Link to='/dashboard'>Dashboard</Link></li></>
             }
         </ul>
     </div>
