@@ -37,7 +37,7 @@ useEffect(() => {
           
             setClient( data);
         })
-},[user?.email, client?.userStatus]);
+},[user]);
 
 
 
