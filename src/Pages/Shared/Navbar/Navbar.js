@@ -92,10 +92,7 @@ useEffect(() => {
     </div>
     <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-
         <li className='font-semibold'><Link to='/'>Home</Link></li>
-        <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
-
         <div className="dropdown dropdown-hover">
         <li className='font-semibold'> <Link to=''> Categories</Link></li>
         <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-36">
@@ -104,6 +101,7 @@ useEffect(() => {
             <li><Link to='/categories?name=sony'>Sony</Link></li>
         </ul>
         </div>
+        <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
 
 
             {
