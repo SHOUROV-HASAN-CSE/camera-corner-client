@@ -39,10 +39,8 @@ useEffect(() => {
         })
 },[user]);
 
-
-
   return (
-    <div className="navbar h-20 mb-6 py-12 bg-zinc-200 rounded-xl">
+    <div className="navbar h-20 pt-8 bg-[#e8e8e6] ">
     <div className="navbar-start">
         <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

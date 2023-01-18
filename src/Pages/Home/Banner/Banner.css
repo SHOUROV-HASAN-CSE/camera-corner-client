@@ -1,0 +1,18 @@
+.custom-button{
+  position: relative;
+  background: #e8e8e6;
+  color: #1f2937;
+  text-transform: uppercase;
+  font-size: 1.0em;
+  letter-spacing: 0.14em;
+  font-weight: 400;
+  padding: 15px 25px;
+  transition: 0.5s;
+  border:1px solid #1f2937;
+}
+.custom-button:hover{
+  letter-spacing: 0.20em;
+  color: #1f2937;
+  background:#1f2937;
+  color:#e8e8e6;
+}
