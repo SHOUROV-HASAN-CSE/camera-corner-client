@@ -30,6 +30,7 @@ const AdvertisedItems = () => {
         }
     </div>
     </>} 
+
 </div>
   );
 };

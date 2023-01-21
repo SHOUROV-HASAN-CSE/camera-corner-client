@@ -6,12 +6,11 @@ import sony from '../../../assets/images/category/sony.png';
 
 const Category = () => {
   return (
-    <div className='text-center py-16 bg-[#e8e8e6] w-full'>
-      <p className='text-lg tracking-widest font-[Barlow] font-black'>TRADE IN YOUR KIT</p>
-      <h1 className='text-5xl mt-4npm start
-      '>Used Camera Category</h1>
+    <div className='text-center py-16 w-full font-[Barlow]'>
+      <p className='text-lg tracking-widest font-black'>TRADE IN YOUR KIT</p>
+      <h1 className='text-5xl mt-4  font-black'>Used Camera Category</h1>
     
-      <div className='md:flex justify-center gap-8 mt-16 text-5xl font-[Barlow] font-black text-white'>
+      <div className='md:flex justify-center gap-8 mt-16 text-5xl font-black text-white'>
 
       <Link to='/categories?name=sony'><div className='flex bg-[#005c80] justify-center items-center rounded-2xl px-11'><p>Sony</p>
       <img className='w-60' src={sony} alt="" />
