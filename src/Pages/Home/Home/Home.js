@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import Category from '../Category/Category';
 import Discover from '../Discover/Discover';
 import SecondSection from '../SecondSection/SecondSection';
+import Shop from '../Shop/Shop';
 import Video from '../Video/Video';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <Discover/>
       <Video/>
       <Category/>
+      <Shop/>
       <AdvertisedItems/>
       <About/>
     </div>
