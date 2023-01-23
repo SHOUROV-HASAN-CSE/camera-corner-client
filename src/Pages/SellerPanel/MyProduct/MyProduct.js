@@ -19,10 +19,10 @@ const MyProduct = () => {
 
 
   
-  const handleDelete = email =>{
+  const handleDelete = id =>{
     const proceed = window.confirm(' Would you want to Delete this Product?');
     if(proceed){
-        fetch(`https://camera-corner-server.vercel.app/myproduct/${email}`, {
+        fetch(`https://camera-corner-server.vercel.app/myproduct/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
@@ -82,7 +82,7 @@ const handleMakeAdmin = id => {
           <td>$ {product.resale_price}</td>
           <td className='font-semibold'>{product.sales_status}</td>
           <td>{ product?.advertise !== 'added' && <button onClick={() => handleMakeAdmin(product._id)} className="btn">advertise</button>}</td>
-          <td><button onClick={() => handleDelete(product.email)} className="btn">Delete</button></td>
+          <td><button onClick={() => handleDelete(product._id)} className="btn">Delete</button></td>
           </tr>)
     }
       

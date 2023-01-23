@@ -8,7 +8,7 @@ const Category = () => {
   return (
     <div className='text-center py-16 w-full font-[Barlow]'>
       <p className='text-lg tracking-widest font-black'>TRADE IN YOUR KIT</p>
-      <h1 className='text-5xl mt-4  font-black'>Used Camera Category</h1>
+      <h1 className='text-6xl mt-4  font-black'>Used Camera Category</h1>
     
       <div className='md:flex justify-center gap-8 mt-16 text-5xl font-black text-white'>
 
