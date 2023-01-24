@@ -9,7 +9,7 @@ const CategoriesCard = ({category, SetBooking}) => {
 
   return (
     <div>
-       <div className="card card-compact bg-base-300 shadow-xl border-orange-400 border-2">
+       <div className="card card-compact bg-base-300 rounded-lg shadow-xl border-orange-400 border-2">
             <figure>
             <img src={img} alt="" />
             </figure>
@@ -31,13 +31,13 @@ const CategoriesCard = ({category, SetBooking}) => {
                 </div>
                 <p className="text-lg">Location: {location}</p>
                 <p className="text-lg">Post Date: {posted_date}</p>
-                <div className="card-actions justify-end">
+                <div className="card-actions justify-center">
                    
                            {/* The button to open modal */}
                 {
-                  user?.email? <label htmlFor="categories-modal" onClick={()=> SetBooking(category)} className="btn">Book Now</label>: <Link to='/login'><button className="btn">Book Now</button></Link>
+                  user?.email? <label htmlFor="categories-modal" onClick={()=> SetBooking(category)} className="custom-button">Book Now</label>: <Link to='/login'><button className="custom-button">Book Now</button></Link>
                 }  
-                  <label className="btn">Report to admin</label>
+                  <label className="custom-button">Report to admin</label>
                 </div>
             </div>
         </div>

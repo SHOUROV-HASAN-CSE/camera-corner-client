@@ -10,7 +10,7 @@ const AdvertisedCard = ({add, SetBooking}) => {
 
   return (
     <div>
-       <div className="card card-compact bg-base-300 shadow-xl border-orange-400 border-2">
+       <div className="card card-compact bg-base-300 rounded-lg shadow-xl border-[#005c80] border-2">
             <figure>
             <img src={img} alt="" />
             </figure>
@@ -27,7 +27,7 @@ const AdvertisedCard = ({add, SetBooking}) => {
                 <p className="text-lg">Post Date: {posted_date}</p>
                 <div className="card-actions justify-center">
                 {
-                  user?.email? <label htmlFor="categories-modal" onClick={()=> SetBooking(add)} className="btn">Book Now</label>: <Link to='/login'><button className="btn">Book Now</button></Link>
+                  user?.email? <label htmlFor="categories-modal" onClick={()=> SetBooking(add)} className="custom-button">Book Now</label>: <Link to='/login'><button className="custom-button">Book Now</button></Link>
                 } 
                 </div>
             </div>

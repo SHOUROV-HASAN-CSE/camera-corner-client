@@ -18,9 +18,9 @@ const Categories = () => {
 
 
   return (
-    <div className='my-16'>       
+    <div className='my-16 md:mx-20'>       
     <div className='text-center mb-12'>
-        <p className="text-6xl font-semibold text-[#003144]">Used Camera Category</p>
+        <p className="text-6xl font-semibold text-[#003144] font-[Barlow]">Used Camera Category</p>
     </div>
     <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {
