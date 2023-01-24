@@ -22,7 +22,7 @@ const Blogs = () => {
       </div>
     </div>
 
-    <div className="card bg-base-100 shadow-xl border-[#005c80] border-2">
+    <div className="card bg-base-100 shadow-xl border-[#f8e233] border-2">
       <figure><img src={blog2} alt="Shoes" /></figure>
       <div className="card-body">
         <h2 className="text-2xl font-bold mb-3">Diary: The northern lights in Iceland with Paul Watson</h2>
@@ -33,7 +33,7 @@ const Blogs = () => {
       </div>
     </div>
 
-    <div className="card bg-base-100 shadow-xl border-[#005c80] border-2">
+    <div className="card bg-base-100 shadow-xl border-[#ea4c88] border-2">
       <figure><img src={blog3} alt="Shoes" /></figure>
       <div className="card-body">
         <h2 className="text-2xl font-bold mb-3">Top 3 digital alternatives to the Hasselblad XPan</h2>
@@ -45,7 +45,7 @@ const Blogs = () => {
     </div>
 
 
-    <div className="card bg-base-100 shadow-xl border-[#005c80] border-2">
+    <div className="card bg-base-100 shadow-xl border-[#ab69c6] border-2">
       <figure><img src={blog4} alt="Shoes" /></figure>
       <div className="card-body">
         <h2 className="text-2xl font-bold mb-3">Sigma DP0 Quattro</h2>
@@ -58,7 +58,7 @@ const Blogs = () => {
 
 
 
-    <div className="card bg-base-100 shadow-xl border-[#005c80] border-2">
+    <div className="card bg-base-100 shadow-xl border-[#007bb1] border-2">
       <figure><img src={blog5} alt="Shoes" /></figure>
       <div className="card-body">
         <h2 className="text-2xl font-bold mb-3">Fujifilm GFX 50R</h2>
