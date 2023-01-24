@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const About = () => {
@@ -10,15 +11,16 @@ const About = () => {
               
                 </div>
                 <div className='w-1/2 my-3'>
-                    <h1 className="my-6 text-5xl font-[Barlow]">
+                    <h1 className="mt-6 text-5xl font-[Barlow]">
                     Buy & Sell Camera Gear </h1>
-                    <p className="py-4 lg:text-2xl text-base font-[Barlow]">
-                      * Made by Creatives, For Creatives. <br />
-                      * Buyer & Seller Protection. <br />
-                      * Unlimited Free Listings. <br />
-                      * Only 5% Seller Fees. <br />
-                      * Target Market.</p>
-                    <button className="custom-button ml-32 md:ml-0 ">Sell Your Gear</button>
+                    <p className="py-5 lg:text-xl text-base font-[Barlow]">
+                       Made by Creatives, For Creatives. <br />
+                       Buyer & Seller Protection. <br />
+                       Unlimited Free Listings. <br />
+                       Only 5% Seller Fees. <br />
+                       Target Market.</p>
+                       <Link to='/addproduct'><button className="custom-button ml-32 md:ml-0 ">Sell Your Gear</button></Link>
+                    
                 </div>
             </div>
         </div>

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
-const AdvertisedCard = ({add}) => {
+const AdvertisedCard = ({add, SetBooking}) => {
 
-  const {_id, img, title, resale_price, original_price, location, used, posted_date, seller_name, verified} = add;
+  const {user} = useContext(AuthContext);
+
+  const {_id, img, title, resale_price, original_price, location, used, posted_date, seller_name} = add;
 
   return (
     <div>
@@ -21,10 +25,10 @@ const AdvertisedCard = ({add}) => {
                 </div>
                 <p className="text-lg">Location: {location}</p>
                 <p className="text-lg">Post Date: {posted_date}</p>
-                <div className="card-actions justify-end">
-                   
-        
-                  <label  className="btn">Book Now</label>
+                <div className="card-actions justify-center">
+                {
+                  user?.email? <label htmlFor="categories-modal" onClick={()=> SetBooking(add)} className="btn">Book Now</label>: <Link to='/login'><button className="btn">Book Now</button></Link>
+                } 
                 </div>
             </div>
         </div>

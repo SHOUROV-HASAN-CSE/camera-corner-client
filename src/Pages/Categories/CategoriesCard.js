@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const CategoriesCard = ({category, SetBooking}) => {
+  const {user} = useContext(AuthContext);
 
   const {img, title, resale_price, original_price, location, used, posted_date, seller_name, verified} = category;
 
@@ -31,7 +34,9 @@ const CategoriesCard = ({category, SetBooking}) => {
                 <div className="card-actions justify-end">
                    
                            {/* The button to open modal */}
-                  <label htmlFor="categories-modal" onClick={()=> SetBooking(category)} className="btn">Book Now</label>
+                {
+                  user?.email? <label htmlFor="categories-modal" onClick={()=> SetBooking(category)} className="btn">Book Now</label>: <Link to='/login'><button className="btn">Book Now</button></Link>
+                }  
                   <label className="btn">Report to admin</label>
                 </div>
             </div>

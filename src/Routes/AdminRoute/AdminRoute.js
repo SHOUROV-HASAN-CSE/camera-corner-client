@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Dna } from 'react-loader-spinner';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
@@ -12,7 +13,14 @@ const AdminRoute = ({ children }) => {
     if (loading || isAdminLoading) {
         return  (
           <div className='flex justify-center items-center'>
-              <progress className="progress progress-secondary w-56"></progress>
+              <Dna
+                visible={true}
+                height="200"
+                width=""
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
+                wrapperClass="dna-wrapper"
+              />
           </div>
           );
     }
