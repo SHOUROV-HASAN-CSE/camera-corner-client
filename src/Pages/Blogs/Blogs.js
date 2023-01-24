@@ -1,59 +1,76 @@
 import React from 'react';
+import blog1 from '../../assets/images/blog/blog-1.webp';
+import blog2 from '../../assets/images/blog/blog-2.webp';
+import blog3 from '../../assets/images/blog/blog-4.webp';
+import blog4 from '../../assets/images/blog/blog-5.webp';
+import blog5 from '../../assets/images/blog/blog-6.webp';
 
 const Blogs = () => {
   return (
-    <div>
+    <div className='md:mx-16 mx-6 md:my-20 my-6'>
+      <p className="text-center mb-12 font-[Barlow] text-6xl font-black">OUR BLOG</p>
+  
+    <div className='grid gap-8 grid-cols-1 md:grid-cols-3'>
+    <div className="card bg-base-100 shadow-xl border-[#005c80] border-2">
+      <figure><img src={blog1} alt="Shoes" /></figure>
+      <div className="card-body">
+        <h2 className="text-2xl font-bold mb-3">Review: Leica M10 Monochrom vs M Typ 246 Monochrom</h2>
+        <p>Which black-and-white Leica camera is better for monochrome photography? MPB resident photographer Ian Howorth compares both...</p>
+        <div className="card-actions justify-center mt-6">
+      <button className="custom-button">Read More</button>
+    </div>
+      </div>
+    </div>
 
-        <h1 className='text-5xl text-center text-[#003144] font-bold my-5'>Blogs</h1>
-        <p className='text-xl text-center'>Click to show Answer</p>
+    <div className="card bg-base-100 shadow-xl border-[#005c80] border-2">
+      <figure><img src={blog2} alt="Shoes" /></figure>
+      <div className="card-body">
+        <h2 className="text-2xl font-bold mb-3">Diary: The northern lights in Iceland with Paul Watson</h2>
+        <p>Read Paul Watson’s journal as he shoots the *aurora borealis* and Iceland’s landscapes with mirrorless cameras and a drone...</p>
+        <div className="card-actions justify-center mt-6">
+      <button className="custom-button">Read More</button>
+    </div>
+      </div>
+    </div>
 
-      <div className="collapse bg-[#003144] text-white text-center w-3/4 mx-auto rounded-xl my-3">
-  <input type="checkbox" /> 
-  <div className="collapse-title text-xl font-medium">
-  What are the different ways to manage a state in a React application?
-  </div>
-  <div className="collapse-content"> 
-    <p>The Four Kinds of React State to Manage
-Local state. Global state. Server state. URL state. React's useState is the best option for local state management. If you need a global state solution, the most popular ones are Redux, MobX, and the built-in Context API. Your choice will depend on the size of your project, your needs, and your engineers' expertise.</p>
-  </div>
-</div>
-
-
-<div className="collapse bg-[#003144] text-white text-center w-3/4 mx-auto rounded-xl my-3">
-  <input type="checkbox" /> 
-  <div className="collapse-title text-xl font-medium">
-  How does prototypical inheritance work?
-  </div>
-  <div className="collapse-content"> 
-    <p>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object. getPrototypeOf and Object.</p>
-  </div>
-</div>
-
-
-
-<div className="collapse bg-[#003144] text-white text-center w-3/4 mx-auto rounded-xl my-3">
-  <input type="checkbox" /> 
-  <div className="collapse-title text-xl font-medium">
-  What is a unit test? Why should we write unit tests?
-  </div>
-  <div className="collapse-content"> 
-    <p>The main objective of unit testing is to isolate written code to test and determine if it works as intended. Unit testing is an important step in the development process, because if done correctly, it can help detect early flaws in code which may be more difficult to find in later testing stages.</p>
-  </div>
-</div>
+    <div className="card bg-base-100 shadow-xl border-[#005c80] border-2">
+      <figure><img src={blog3} alt="Shoes" /></figure>
+      <div className="card-body">
+        <h2 className="text-2xl font-bold mb-3">Top 3 digital alternatives to the Hasselblad XPan</h2>
+        <p>Which digital cameras are capable of matching the unique Hasselblad XPan film camera...</p>
+        <div className="card-actions justify-center mt-6">
+      <button className="custom-button">Read More</button>
+    </div>
+      </div>
+    </div>
 
 
+    <div className="card bg-base-100 shadow-xl border-[#005c80] border-2">
+      <figure><img src={blog4} alt="Shoes" /></figure>
+      <div className="card-body">
+        <h2 className="text-2xl font-bold mb-3">Sigma DP0 Quattro</h2>
+        <p>The Sigma DP0 Quattro is a compact fixed-lens camera, which allows you to take pictures close to the aspect ratio of the Hasselblad XPan...</p>
+        <div className="card-actions justify-center mt-6">
+      <button className="custom-button">Read More</button>
+    </div>
+      </div>
+    </div>
 
-<div className="collapse bg-[#003144] text-white text-center w-3/4 mx-auto rounded-xl my-3 mb-6">
-  <input type="checkbox" /> 
-  <div className="collapse-title text-xl font-medium ">
-  React vs. Angular vs. Vue?
-  </div>
-  <div className="collapse-content"> 
-    <p>Vue provides higher customizability and hence is easier to learn than Angular or React. Further, Vue has an overlap with Angular and React with respect to their functionality like the use of components. Hence, the transition to Vue from either of the two is an easy option.</p>
-  </div>
-</div>
+
+
+    <div className="card bg-base-100 shadow-xl border-[#005c80] border-2">
+      <figure><img src={blog5} alt="Shoes" /></figure>
+      <div className="card-body">
+        <h2 className="text-2xl font-bold mb-3">Fujifilm GFX 50R</h2>
+        <p>The Fujifilm GFX 50Rhas a 50-megapixel medium-format sensor, which—even when using the XPan 65x24 crop—gives you healthy 25-megapixel resolution files...</p>
+        <div className="card-actions justify-center mt-6">
+      <button className="custom-button">Read More</button>
+    </div>
+      </div>
+    </div>
 
     </div>
+  </div>
   );
 };
 
