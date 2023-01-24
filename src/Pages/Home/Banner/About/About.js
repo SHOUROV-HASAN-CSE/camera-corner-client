@@ -1,25 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import img1 from '../../../../assets/images/blog/blog-3.webp';
 
 
 const About = () => {
     return (
-        <div className="hero my-10 bg-[#e8e8e6] font-black">
+        <div className="hero my-10 py-10 bg-[#e8e8e6] font-black">
             <div className="hero-content flex-col lg:flex-row">
                 <div className=' '>
-                    <img src='https://www.gearfocus.com/assets/images/page/gear-focus-home-banner.jpg' alt="" className="w-3/4 rounded-xl shadow-2xl border-2 border-gray-200" />
+                    <img src={img1} alt="" className="md:w-3/4 rounded-xl shadow-2xl border-2 border-gray-200" />
               
                 </div>
-                <div className='w-1/2 my-3'>
-                    <h1 className="mt-6 text-5xl font-[Barlow]">
+                <div className='md:w-1/2 my-3 text-center md:text-left'>
+                    <h1 className="text-5xl font-[Barlow]">
                     Buy & Sell Camera Gear </h1>
-                    <p className="py-5 lg:text-xl text-base font-[Barlow]">
-                       Made by Creatives, For Creatives. <br />
-                       Buyer & Seller Protection. <br />
-                       Unlimited Free Listings. <br />
-                       Only 5% Seller Fees. <br />
-                       Target Market.</p>
-                       <Link to='/addproduct'><button className="custom-button ml-32 md:ml-0 ">Sell Your Gear</button></Link>
+                    <div className="py-5 lg:text-xl text-base font-[Barlow]">
+                    <p>span Made by Creatives, For Creatives.</p>
+                    <p>Buyer & Seller Protection.</p>
+                    <p>Unlimited Free Listings.</p>
+                    <p>Only 5% Seller Fees.</p>
+                    <p>Target Market.</p>
+                       </div>
+                    <div>
+                    <Link to='/addproduct'><button className="custom-button md:ml-0 ">Sell Your Gear</button></Link>
+                    </div>
                     
                 </div>
             </div>

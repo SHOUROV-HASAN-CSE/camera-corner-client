@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import blog1 from '../../../assets/images/blog/blog-1.webp';
 import blog2 from '../../../assets/images/blog/blog-2.webp';
-import blog3 from '../../../assets/images/blog/blog-3.webp';
+import blog3 from '../../../assets/images/blog/blog-4.webp';
 const LetsBlog = () => {
   return (
     <div className='md:mx-16 mx-6 md:my-20 my-6'>
