@@ -6,30 +6,28 @@ import sony from '../../../assets/images/category/sony.png';
 
 const Category = () => {
   return (
-    <div className='text-center py-16 w-full font-[Barlow]'>
-      <p className='text-lg tracking-widest font-black'>TRADE IN YOUR KIT</p>
-      <h1 className='text-6xl mt-4  font-black'>Used Camera Category</h1>
-    
-      <div className='md:flex justify-center gap-8 mt-16 text-5xl font-black text-white'>
+    <div className='mx-4'>
+      <div className='text-center mb-12 font-[Barlow]'>
+        <p className='text-lg tracking-widest font-black'>TRADE IN YOUR KIT</p>
+        <p className="text-6xl mt-4 font-black">Used Camera Category</p>
+    </div>
+
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-5xl font-black font-[Barlow] text-white'>
 
       <Link to='/categories?name=sony'><div className='flex bg-[#005c80] justify-center items-center rounded-2xl px-11'><p>Sony</p>
-      <img className='w-60' src={sony} alt="" />
-        </div></Link>
+      <img className='md:w-60 w-40' src={sony} alt="" />
+      </div></Link>
 
-     
       <Link to='/categories?name=canon'><div className='flex bg-[#ea4c88] justify-center items-center rounded-2xl px-11'><p>Canon</p>
-      <img className='w-60' src={canon} alt="" />
-        </div></Link>
-
-
+      <img className='md:w-60 w-40' src={canon} alt="" />
+      </div></Link>
 
       <Link to='/categories?name=Nikon'><div className='flex bg-[#ab69c6] justify-center items-center rounded-2xl px-11'><p>Nikon</p>
-      <img className='w-60' src={nikon} alt="" />
-        </div></Link>
-        
+      <img className='md:w-60 w-40' src={nikon} alt="" />
+      </div></Link>
 
-      </div>
-      
+    </div>
+
     </div>
   );
 };
