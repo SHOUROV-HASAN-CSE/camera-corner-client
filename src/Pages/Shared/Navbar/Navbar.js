@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/icon/icon.png';
-import icon from '../../../assets/images/image/image-8.png';
+import { FaUser } from 'react-icons/fa';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
 
@@ -122,16 +122,16 @@ useEffect(() => {
                 }
             </ul>
         </div>
-        <div className="dropdown dropdown-left md:ml-36">
-      <label tabIndex={1} className="rounded-full ring ring-primary avatar tooltip tooltip-left" data-tip={user?.displayName}>
+        <div tabIndex={1} className="dropdown dropdown-left md:ml-36">
+        {
+            user?.uid ? 
+      <label className="rounded-full ring ring-primary avatar tooltip tooltip-left" data-tip={user?.displayName}>
         <div className="w-10 rounded-full">
-          {
-            user?.uid ? <img src={user?.photoURL} alt=""/> : 
-            <img src={icon} alt=""/>
-          }
-          
+         <img src={user?.photoURL} alt=""/> 
         </div>
-      </label>
+      </label> : 
+      <FaUser className='text-2xl'></FaUser>
+    }
       <ul tabIndex={1} className="menu menu-compact dropdown-content mt-10 p-3 shadow bg-base-100 rounded-box w-36">
         <li><Link>Profile</Link></li>
         <li><Link>Settings</Link></li>
