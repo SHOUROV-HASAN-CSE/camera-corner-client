@@ -72,7 +72,7 @@ const saveUser = (name, email, userStatus, photoURL) =>{
         <div className="hero w-full my-10">
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                <img className='w-2/2 rounded-2xl' src={image} alt="" />
+                <img className='md:w-2/2 rounded-2xl' src={image} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100 py-10">
                     <h1 className="text-5xl text-center font-bold">Sign Up</h1>
