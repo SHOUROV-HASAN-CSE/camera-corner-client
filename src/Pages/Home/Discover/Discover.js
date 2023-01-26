@@ -69,7 +69,7 @@ const Discover = () => {
      <button className='mt-8 custom-button ml-32 md:ml-0'>Read More</button>
     </div>
      
-      <div className='gallery mt-14 md:mt-0 w-full md:w-auto'>
+      <div className='gallery mt-14 md:mt-0 w-full md:w-auto overflow-clip'>
          <img src={img1} alt="" />
          <img src={img2} alt="" />
          <img src={img3} alt="" />

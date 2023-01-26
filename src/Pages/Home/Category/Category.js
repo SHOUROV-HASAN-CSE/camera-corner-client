@@ -6,7 +6,7 @@ import sony from '../../../assets/images/category/sony.png';
 
 const Category = () => {
   return (
-    <div className='mx-4'>
+    <div className='mx-4 overflow-hidden'>
       <div className='text-center mb-12 font-[Barlow]'>
         <p className='text-lg tracking-widest font-black'>TRADE IN YOUR KIT</p>
         <p className="text-6xl mt-4 font-black">Used Camera Category</p>

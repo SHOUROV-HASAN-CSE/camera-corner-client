@@ -66,19 +66,11 @@ const Login = () => {
       .catch(error =>console.error(error)) 
     }
 
-
-
-
+    
     const saveUser = (name, email, userStatus, photoURL) =>{
         const user ={name, email, userStatus, photoURL};
        
     }
-
-
-
-
-
-
 
 
 
