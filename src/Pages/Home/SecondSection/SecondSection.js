@@ -1,7 +1,7 @@
 import React from 'react';
-import img1 from '../../../assets/images/image/image-3.PNG';
-import img2 from '../../../assets/images/image/image-4.PNG';
-import img3 from '../../../assets/images/image/image-5.PNG';
+import img1 from '../../../assets/images/image/image-3.png';
+import img2 from '../../../assets/images/image/image-4.png';
+import img3 from '../../../assets/images/image/image-5.png';
 
 const SecondSection = () => {
   return (
@@ -14,3 +14,5 @@ const SecondSection = () => {
 };
 
 export default SecondSection;
+
+
